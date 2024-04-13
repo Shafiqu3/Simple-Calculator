@@ -1,0 +1,50 @@
+.calculator {
+    display: flex;
+    flex-direction: column;
+    /*top to bottom*/
+    width: 300px;
+    margin: 0 auto;
+    background-color: #FF0000;
+    border-radius: 5px;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+.display {
+    font-size: 24px;
+    padding: 10px;
+    text-align: right;
+    border: none;
+    background-color: #2C2D2D;
+
+}
+
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin: 10px 0;
+
+}
+
+
+button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+button[value$='0'] {
+    grid-row-start: 5;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
