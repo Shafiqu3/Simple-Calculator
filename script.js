@@ -1,54 +1,32 @@
 
-
-
 class Calculator{
-    constructor(){
-        this.currentValue = 0;
-        this.previousValue = null;
-        this.operation = null;
+    constructor(previousOperandTextEl, currentOperandTextEl){
+        this.previousOperandTextEl = previousOperandTextEl;
+        this.currentOperandTextEl = currentOperandTextEl;
+        this.clear();
     }
-}
 
+    appendDigit(digit){
+            this.currentValue = this.currentValue.toString() + digit.toString();
+       
+        }
 
-class Clear{
-    constructor(){
-        this.currentValue = 0;
-        this.previousValue = null;
-        this.operation = null;
+    updateDisplay(){
+        this.currentOperandTextEl.innerText = this.currentValue;
     }
-}
 
-
-class AppendDigit{
-    constructor(digit){
-        this.currentValue = this.currentValue * 10 + digit;
+    clear(){    
+            this.currentValue = "";
+            this.previousValue = "";
+            this.operation = null;
+        }
     }
-}
-
-
+    
 class ToggleSign{
   constructor(){
 
   }
 
-}
-
-
-class HandlButtonClick{
-  constructor(btn){
-        switch (btn) {
-            case "AC":
-                Clear();
-                break;
-        case "-/+":
-            ToggleSign();
-            case "%":
-
-                break;
-        }
-
-
-  }
 }
 
 
@@ -88,14 +66,27 @@ class Calculatore{
 }
 }
 
-const buttons = document.querySelectorAll("button");
-buttons.forEach(button => {
-    button.addEventListener("click", function(value) {
-        const value = button.value;
-        
-    })
-});
 
+const display = document.querySelector(".display");
 const dataAllClearBtn = document.querySelector("[data-all-clear]");
 const operationBtn = document.querySelector("[data-operation]");
-const numberBtns = document.querySelector("[data-number]");
+const numberDataset = document.querySelectorAll("#numberBtns");
+const previousOperandTextEl = document.querySelector("#previousNum");
+const currentOperandTextEl = document.querySelector("#currentNum");
+
+
+const calculator = new Calculator(previousOperandTextEl, currentOperandTextEl); 
+console.log(calculator);
+console.log(numberDataset);
+console.log(previousOperandTextEl);
+console.log(currentOperandTextEl);
+
+
+
+
+numberDataset.forEach( button => {
+    button.addEventListener("click", ()=> {
+        calculator.appendDigit(button.innerText);
+        calculator.updateDisplay();
+    })
+});

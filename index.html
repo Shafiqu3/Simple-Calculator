@@ -9,27 +9,30 @@
 </head>
 <body>
     <div class="calculator">
-        <input type="text" class="display" disabled>
+       <div class="output">
+        <div id="previousNum" class="previous-operand"></div>
+        <div id="currentNum" class="current-operand"></div>
+       </div>
         <div class="buttons">
-            <button  value="AC">AC</button>
-            <button data-operation value="+/-">+/-</button>
-            <button data-operation value="%">%</button>
-            <button data-operation value="/">/</button>
-            <button data-number value="7">7</button>
-            <button data-number value="8">8</button>
-            <button data-number value="9">9</button>
-            <button data-operation value="x">x</button>
-            <button data-number value="4">4</button>
-            <button data-number value="5">5</button>
-            <button data-number value="6">6</button>
-            <button data-operation value="-">-</button>
-            <button data-number value="1">1</button>
-            <button data-number value="2">2</button>
-            <button data-number value="3">3</button>
-            <button data-operation value="+">+</button>
-            <button data-number value="0">0</button>
-            <button data-number value=".">.</button>
-            <button data-operation value="=">=</button>
+            <button  id="operatorBtns" value="AC">AC</button>
+            <button id="operatorBtns" value="+/-">+/-</button>
+            <button id="operatorBtns" data-operation value="%">%</button>
+            <button id="operatorBtns" data-operation value="/">/</button>
+            <button id="numberBtns" data-number value="7">7</button>
+            <button id="numberBtns" data-number value="8">8</button>
+            <button id="numberBtns" data-number value="9">9</button>
+            <button  id="operatorBtns" data-operation value="x">x</button>
+            <button id="numberBtns" data-number value="4">4</button>
+            <button id="numberBtns" data-number value="5">5</button>
+            <button id="numberBtns" data-number value="6">6</button>
+            <button id="operatorBtns" data-operation value="-">-</button>
+            <button id="numberBtns" data-number value="1">1</button>
+            <button id="numberBtns" data-number value="2">2</button>
+            <button id="numberBtns" data-number value="3">3</button>
+            <button id="operatorBtns" data-operation value="+">+</button>
+            <button id="numberBtns" data-number value="0">0</button>
+            <button id="operatorBtns" data-number value=".">.</button>
+            <button id="operatorBtns" data-operation value="=">=</button>
         </div>
     </div>
 </body>

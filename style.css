@@ -15,14 +15,14 @@
 }
 
 
-.display {
+/* .display {
     font-size: 24px;
     padding: 10px;
     text-align: right;
     border: none;
     background-color: #2C2D2D;
 
-}
+} */
 
 
 .buttons {
@@ -48,3 +48,34 @@ button[value$='0'] {
     grid-column-start: 1;
     grid-column-end: 3;
 }
+
+.output {
+    /* grid-column: 1 / -1;
+    font-size: 24px;
+    padding: 10px;
+    text-align: right;
+    border: none;
+    background-color: #2C2D2D;
+    word-wrap: break-word;
+    word-break: break-all; */
+
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 30px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+  }
+  
+  .output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+  }
