@@ -6,7 +6,11 @@ class Calculator{
         this.clear();
     }
 
+    //append Number
     appendDigit(digit){
+        if (digit === "." && this.currentValue.includes(".")) {
+        return;            
+        }
             this.currentValue = this.currentValue.toString() + digit.toString();
        
         }
@@ -22,6 +26,7 @@ class Calculator{
         }
     }
     
+
 class ToggleSign{
   constructor(){
 
@@ -38,7 +43,8 @@ this.operation = operation;
 }
 }
 
-class Calculatore{
+
+class Calc{
 
     calculate() {
     if (this.previousValue === null || this.currentValue === null) {
@@ -66,7 +72,7 @@ class Calculatore{
 }
 }
 
-
+//select DOM elements
 const display = document.querySelector(".display");
 const dataAllClearBtn = document.querySelector("[data-all-clear]");
 const operationBtn = document.querySelector("[data-operation]");
@@ -84,7 +90,15 @@ console.log(currentOperandTextEl);
 
 
 
-numberDataset.forEach( button => {
+numberDataset.forEach(button => {
+    button.addEventListener("click", ()=> {
+        calculator.appendDigit(button.innerText);
+        calculator.updateDisplay();
+    })
+});
+
+
+operationBtn.forEach(button => {
     button.addEventListener("click", ()=> {
         calculator.appendDigit(button.innerText);
         calculator.updateDisplay();
