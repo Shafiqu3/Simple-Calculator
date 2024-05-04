@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
